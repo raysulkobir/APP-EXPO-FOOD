@@ -1,12 +1,9 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { Text, View } from "react-native";
 
-const SignUpScreen = () => {
+export default function SignUpScreen() {
   return (
     <View>
-      <Text>SignUpScreen</Text>
+      <Text>Sign Up Screen</Text>
     </View>
-  )
+  );
 }
-
-export default SignUpScreen

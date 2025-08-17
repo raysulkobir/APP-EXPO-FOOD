@@ -25,6 +25,7 @@ export const homeStyles = StyleSheet.create({
     fontWeight: "800",
     color: COLORS.text,
     letterSpacing: -0.5,
+
   },
   featuredSection: {
     paddingHorizontal: 20,

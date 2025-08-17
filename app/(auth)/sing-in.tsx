@@ -1,17 +1,19 @@
+import { COLORS } from '@/constants/colors';
+import { Ionicons } from "@expo/vector-icons";
 import { Image } from 'expo-image';
+import { router } from 'expo-router';
 import React from 'react';
 import {
+  KeyboardAvoidingView,
+  Platform,
   ScrollView,
   Text,
   TextInput,
-  View,
-  KeyboardAvoidingView,
-  Platform,
-  TouchableOpacity
+  TouchableOpacity,
+  View
 } from "react-native";
 import { authStyles } from "../../assets/styles/auth.styles";
-import { COLORS } from '@/constants/colors';
-import { Ionicons } from "@expo/vector-icons";
+import { Link } from 'expo-router';
 
 
 const SignInScreen = () => {
@@ -21,6 +23,7 @@ const SignInScreen = () => {
   const [loading, setLoading] = React.useState(false);
 
   const handleSignIn = () => {
+    // Alert.alert("Sign In", "Sign In");
     // setShowPassword(!showPassword);
   };
 
@@ -67,7 +70,7 @@ const SignInScreen = () => {
 
               <TouchableOpacity style={authStyles.eyeButton} onPress={() => setShowPassword(!showPassword)}>
                 <Ionicons
-                    name={showPassword ? "eye-off" : "eye"}
+                  name={showPassword ? "eye-off" : "eye"}
                   size={24}
                   color={COLORS.textLight}
                   onPress={() => setShowPassword(!showPassword)}
@@ -84,12 +87,22 @@ const SignInScreen = () => {
               >
                 <Text style={authStyles.buttonText}>{loading ? "Signing In..." : "Sign In"}</Text>
               </TouchableOpacity>
+    {/* Sign Up Link */}
+            <TouchableOpacity
+              style={authStyles.linkContainer}
+                onPress={() => router.push("app/(auth)/sing-up")}
+            >
+              <Text style={authStyles.linkText}>
+                Don&apos;t have an account? <Text style={authStyles.link}>Sign up</Text>
+              </Text>
+            </TouchableOpacity>
 
-              <TouchableOpacity style={authStyles.linkContainer}>
-                <Text style={authStyles.linkText}>
-                  Don&apos;t have an account? <Text style={authStyles.link}>Sign up</Text>
-                </Text>
+
+              <TouchableOpacity onPress={() => router.push("/(auth)/sign-up")}>
+                <Text>Go to Sign Up</Text>
               </TouchableOpacity>
+
+              <Link href="./article">Go to article</Link>
             </View>
           </View>
         </ScrollView>
