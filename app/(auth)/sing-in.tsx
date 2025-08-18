@@ -13,7 +13,6 @@ import {
   View
 } from "react-native";
 import { authStyles } from "../../assets/styles/auth.styles";
-import { Link } from 'expo-router';
 
 
 const SignInScreen = () => {
@@ -90,19 +89,12 @@ const SignInScreen = () => {
     {/* Sign Up Link */}
             <TouchableOpacity
               style={authStyles.linkContainer}
-                onPress={() => router.push("app/(auth)/sing-up")}
+                onPress={() => router.push("/(auth)/sing-up")}
             >
               <Text style={authStyles.linkText}>
                 Don&apos;t have an account? <Text style={authStyles.link}>Sign up</Text>
               </Text>
             </TouchableOpacity>
-
-
-              <TouchableOpacity onPress={() => router.push("/(auth)/sign-up")}>
-                <Text>Go to Sign Up</Text>
-              </TouchableOpacity>
-
-              <Link href="./article">Go to article</Link>
             </View>
           </View>
         </ScrollView>
