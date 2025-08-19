@@ -1,14 +1,14 @@
-import { View, Text, ScrollView, TouchableOpacity, FlatList, RefreshControl } from "react-native";
-import { useEffect, useState } from "react";
-import { useRouter } from "expo-router";
-import { MealAPI } from "../../services/mealAPI";
-import { homeStyles } from "../../assets/styles/home.styles";
-import { Image } from "expo-image";
-import { COLORS } from "../../constants/colors";
 import { Ionicons } from "@expo/vector-icons";
+import { Image } from "expo-image";
+import { useRouter } from "expo-router";
+import { useEffect, useState } from "react";
+import { FlatList, RefreshControl, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { homeStyles } from "../../assets/styles/home.styles";
 import CategoryFilter from "../../components/CategoryFilter";
-import RecipeCard from "../../components/RecipeCard";
 import LoadingSpinner from "../../components/LoadingSpinner";
+import RecipeCard from "../../components/RecipeCard";
+import { COLORS } from "../../constants/colors";
+import { MealAPI } from "../../services/mealAPI";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
